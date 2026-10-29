@@ -1,0 +1,522 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Christine Schouten | Digital Experience Portfolio</title>
+  <meta name="description" content="Professional portfolio showcasing front-end development, UX/UI, enterprise website administration, and digital communications.">
+
+  <style>
+    :root {
+      --slate-blue: #526B85;
+      --dark-blue: #293D53;
+      --light-blue: #EDF2F6;
+      --text: #344054;
+      --muted: #667085;
+      --white: #FFFFFF;
+      --border: #DCE3EA;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--slate-blue);
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--slate-blue);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(1080px, 90%);
+      margin: 0 auto;
+    }
+
+    /* Header and navigation */
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navigation {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      color: var(--dark-blue);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    nav a {
+      color: var(--text);
+      font-size: 0.92rem;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: var(--slate-blue);
+    }
+
+    /* Introduction */
+
+    .hero {
+      background: var(--light-blue);
+      padding: 95px 0 90px;
+      border-bottom: 3px solid var(--slate-blue);
+    }
+
+    .eyebrow {
+      color: var(--slate-blue);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      color: var(--dark-blue);
+      font-size: clamp(2.3rem, 5vw, 3.8rem);
+      line-height: 1.15;
+      max-width: 760px;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      max-width: 690px;
+      font-size: 1.1rem;
+      color: #475467;
+      margin-bottom: 28px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--dark-blue);
+      color: var(--white);
+      padding: 12px 23px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 10px 10px 0;
+    }
+
+    .button:hover {
+      background: var(--slate-blue);
+    }
+
+    .button-secondary {
+      background: transparent;
+      border: 1px solid var(--slate-blue);
+      color: var(--dark-blue);
+    }
+
+    .button-secondary:hover {
+      color: var(--white);
+    }
+
+    /* General sections */
+
+    section {
+      padding: 76px 0;
+      scroll-margin-top: 20px;
+    }
+
+    .section-heading {
+      color: var(--dark-blue);
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .section-intro {
+      max-width: 720px;
+      color: var(--muted);
+      margin-bottom: 35px;
+    }
+
+    /* Project cards */
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .project-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    .project-visual {
+      min-height: 180px;
+      background: var(--light-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      text-align: center;
+    }
+
+    .project-visual span {
+      color: var(--dark-blue);
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .project-content {
+      padding: 25px;
+    }
+
+    .project-content h3 {
+      color: var(--dark-blue);
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+
+    .project-content p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .project-link {
+      display: inline-block;
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 1px solid var(--slate-blue);
+    }
+
+    .project-link:hover {
+      color: var(--dark-blue);
+    }
+
+    /* Video */
+
+    .video-placeholder {
+      background: var(--light-blue);
+      border: 1px dashed var(--slate-blue);
+      border-radius: 8px;
+      padding: 35px;
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .video-placeholder p {
+      margin-bottom: 16px;
+      color: var(--muted);
+    }
+
+    /* About and skills */
+
+    .about {
+      background: #F8FAFC;
+    }
+
+    .about-text {
+      max-width: 800px;
+      margin-bottom: 30px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .skill {
+      background: var(--light-blue);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 7px 13px;
+      color: var(--dark-blue);
+      font-size: 0.9rem;
+    }
+
+    /* Contact */
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      max-width: 620px;
+      margin: 0 auto 24px;
+      color: var(--muted);
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .contact-links a {
+      font-weight: 600;
+    }
+
+    footer {
+      background: var(--dark-blue);
+      color: var(--white);
+      text-align: center;
+      padding: 24px 0;
+      font-size: 0.88rem;
+    }
+
+    /* Mobile layout */
+
+    @media (max-width: 650px) {
+      .navigation {
+        padding: 18px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        gap: 14px;
+      }
+
+      .hero {
+        padding: 65px 0;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container navigation">
+      <a class="logo" href="#home">CHRISTINE SCHOUTEN</a>
+
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#work">My Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="eyebrow">Digital Experience Portfolio</div>
+
+        <h1>Creating Effective Digital Experiences</h1>
+
+        <p>
+          I am a digital experience professional with experience in
+          front-end development, UX/UI, enterprise website administration,
+          and digital communications. I combine technical knowledge,
+          visual design, and content management to support accessible,
+          user-focused digital experiences.
+        </p>
+
+        <a class="button" href="#work">Explore My Work</a>
+        <a class="button button-secondary"
+           href="#contact">Get in Touch</a>
+      </div>
+    </section>
+
+    <!-- Featured work -->
+    <section id="work">
+      <div class="container">
+        <h2 class="section-heading">Featured Work</h2>
+
+        <p class="section-intro">
+          A selection of digital communications and website projects
+          that demonstrate my experience in digital publishing,
+          website management, and user experience.
+        </p>
+
+        <div class="project-grid">
+
+          <!-- Project 1 -->
+          <article class="project-card">
+            <div class="project-visual">
+              <span>Digital Communications</span>
+            </div>
+
+            <div class="project-content">
+              <h3>Newsletters & Publications</h3>
+
+              <p>
+                Explore selected digital newsletters and communications.
+                These examples demonstrate my experience with digital
+                content, publication presentation, and publishing workflows.
+              </p>
+
+              <!-- Replace # with your public newsletter URL -->
+              <a class="project-link"
+                 href="YOUR-NEWSLETTER-URL"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                View Publication &rarr;
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card">
+            <div class="project-visual">
+              <span>Enterprise Web Experience</span>
+            </div>
+
+            <div class="project-content">
+              <h3>Internal Website Walkthrough</h3>
+
+              <p>
+                A video demonstration of an internal website I developed
+                or maintained, highlighting its structure, functionality,
+                and digital user experience.
+              </p>
+
+              <!-- Replace # with your approved video URL -->
+              <a class="project-link"
+                 href="YOUR-VIDEO-URL"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Watch Website Walkthrough &rarr;
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+      <div class="container">
+        <h2 class="section-heading">About Me</h2>
+
+        <div class="about-text">
+          <p>
+            My work brings together front-end development, website
+            administration, UX/UI, digital communications, and content
+            management. I enjoy translating business requirements into
+            practical digital solutions while paying attention to usability,
+            visual presentation, accessibility, and quality.
+          </p>
+
+          <p style="margin-top: 18px;">
+            I collaborate with technical teams, business stakeholders,
+            and communications professionals to maintain websites,
+            manage content, and support digital initiatives.
+          </p>
+        </div>
+
+        <h3 style="color: var(--dark-blue);">
+          Core Skills & Technologies
+        </h3>
+
+        <div class="skills">
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">Responsive Web Design</span>
+          <span class="skill">UX/UI</span>
+          <span class="skill">Website Administration</span>
+          <span class="skill">WordPress</span>
+          <span class="skill">W3 Publisher</span>
+          <span class="skill">Content Management</span>
+          <span class="skill">Accessibility</span>
+          <span class="skill">Quality Assurance</span>
+          <span class="skill">GitHub</span>
+          <span class="skill">Visual Studio Code</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2 class="section-heading">Let's Connect</h2>
+
+        <p>
+          Thank you for taking the time to explore my work.
+          I welcome opportunities to contribute my digital,
+          technical, and creative skills to new projects and teams.
+        </p>
+
+        <div class="contact-links">
+          <!-- Replace with your preferred professional email -->
+          <a href="mailto:YOUR-EMAIL-ADDRESS">
+            Email Me
+          </a>
+
+          <!-- Replace with your LinkedIn profile URL -->
+          <a href="YOUR-LINKEDIN-URL"
+             target="_blank"
+             rel="noopener noreferrer">
+            LinkedIn Profile &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      &copy; <span id="year"></span> Christine Schouten
+      &nbsp;|&nbsp; Digital Experience Portfolio
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
