@@ -1,0 +1,669 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Newsletters & Publications | Christine Schouten</title>
+  <meta name="description" content="A portfolio of digital newsletters, event flyers, published assets, showcase replays, volunteer communications, and site-specific newsletters.">
+
+  <style>
+    :root {
+      --slate-blue: #526B85;
+      --dark-blue: #293D53;
+      --light-blue: #EDF2F6;
+      --text: #344054;
+      --muted: #667085;
+      --white: #FFFFFF;
+      --border: #DCE3EA;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      background: var(--white);
+    }
+
+    a {
+      color: var(--slate-blue);
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--slate-blue);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(1080px, 90%);
+      margin: 0 auto;
+    }
+
+    /* Header */
+
+    header {
+      border-bottom: 1px solid var(--border);
+      background: var(--white);
+    }
+
+    .navigation {
+      min-height: 82px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .logo {
+      color: var(--dark-blue);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.92rem;
+    }
+
+    nav a:hover {
+      color: var(--slate-blue);
+    }
+
+    /* Page introduction */
+
+    .hero {
+      background: var(--light-blue);
+      padding: 65px 0;
+      border-bottom: 3px solid var(--slate-blue);
+    }
+
+    .eyebrow {
+      color: var(--slate-blue);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      color: var(--dark-blue);
+      font-size: clamp(2.1rem, 5vw, 3.2rem);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 740px;
+      color: #475467;
+      font-size: 1.08rem;
+    }
+
+    /* Category navigation */
+
+    .category-nav {
+      padding: 25px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .category-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .category-links a {
+      display: inline-block;
+      background: var(--light-blue);
+      color: var(--dark-blue);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 7px 13px;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .category-links a:hover {
+      background: var(--dark-blue);
+      color: var(--white);
+    }
+
+    /* Publication sections */
+
+    .publications {
+      padding: 55px 0 75px;
+    }
+
+    .publication-section {
+      padding: 35px 0;
+      border-bottom: 1px solid var(--border);
+      scroll-margin-top: 20px;
+    }
+
+    .publication-section:first-child {
+      padding-top: 0;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      color: var(--dark-blue);
+      font-size: 1.65rem;
+      margin-bottom: 10px;
+    }
+
+    .section-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 38px;
+      height: 38px;
+      border-radius: 5px;
+      background: var(--light-blue);
+      color: var(--slate-blue);
+      font-size: 0.95rem;
+    }
+
+    .section-description {
+      color: var(--muted);
+      margin-bottom: 22px;
+      max-width: 750px;
+    }
+
+    .publication-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      list-style: none;
+    }
+
+    .publication-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      min-width: 0;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--white);
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .publication-list li:hover {
+      border-color: var(--slate-blue);
+      background: #FAFBFC;
+    }
+
+    .document-icon {
+      flex-shrink: 0;
+      color: var(--slate-blue);
+      font-size: 1.25rem;
+      line-height: 1.5;
+    }
+
+    .publication-list a {
+      display: inline-block;
+      color: var(--dark-blue);
+      font-weight: 600;
+      line-height: 1.5;
+      text-decoration: none;
+    }
+
+    .publication-list a:hover {
+      color: var(--slate-blue);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .publication-type {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-top: 5px;
+    }
+
+    /* Back to top */
+
+    .back-top {
+      display: inline-block;
+      margin-top: 20px;
+      color: var(--slate-blue);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* Footer */
+
+    footer {
+      padding: 25px 0;
+      background: var(--dark-blue);
+      color: var(--white);
+      font-size: 0.88rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--white);
+      text-underline-offset: 3px;
+    }
+
+    /* Responsive layout */
+
+    @media (max-width: 800px) {
+      .publication-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .navigation {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 18px 0;
+      }
+
+      nav {
+        gap: 14px;
+      }
+
+      .hero {
+        padding: 45px 0;
+      }
+
+      .publication-list {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading {
+        font-size: 1.4rem;
+      }
+
+      .publications {
+        padding-top: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- Header -->
+  <header>
+    <div class="container navigation">
+      <a class="logo" href="index.html">
+        CHRISTINE SCHOUTEN
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#work">My Work</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Page introduction -->
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">Portfolio / Selected Work</div>
+
+        <h1>Newsletters & Publications</h1>
+
+        <p>
+          A selection of digital newsletters, event communications,
+          published assets, and replay announcements. These examples
+          showcase my experience in digital communications, content
+          management, publication presentation, and enterprise web
+          publishing.
+        </p>
+      </div>
+    </section>
+
+    <!-- Jump links -->
+    <nav class="category-nav" aria-label="Publication categories">
+      <div class="container category-links">
+        <a href="#blog">Blog Newsletters</a>
+        <a href="#events">Events Flyers</a>
+        <a href="#assets">Published Assets</a>
+        <a href="#replays">Showcase Replays</a>
+        <a href="#volunteer">Volunteer Calls</a>
+        <a href="#site-specific">Site-Specific Newsletters</a>
+      </div>
+    </nav>
+
+    <div class="container publications">
+
+      <!-- 1. Blog Newsletters -->
+      <section class="publication-section" id="blog">
+        <h2 class="section-heading">
+          <span class="section-number">01</span>
+          Blog Newsletters
+        </h2>
+
+        <p class="section-description">
+          Selected blog newsletter editions demonstrating digital
+          publishing and content presentation.
+        </p>
+
+        <ul class="publication-list">
+          <li>
+            <span class="document-icon" aria-hidden="true">&#9998;</span>
+            <div>
+              <a href="https://aot-emails.s3.us.cloud-object-storage.appdomain.cloud/BUZZ20260923.html"
+                 target="_blank" rel="noopener noreferrer">
+                September 23, 2026 Edition
+              </a>
+              <span class="publication-type">Blog Newsletter</span>
+            </div>
+          </li>
+
+          <li>
+            <span class="document-icon" aria-hidden="true">&#9998;</span>
+            <div>
+              <a href="https://aot-emails.s3.us.cloud-object-storage.appdomain.cloud/BUZZ20261021.html"
+                 target="_blank" rel="noopener noreferrer">
+                October 21, 2026 Edition
+              </a>
+              <span class="publication-type">Blog Newsletter</span>
+            </div>
+          </li>
+
+          <li>
+            <span class="document-icon" aria-hidden="true">&#9998;</span>
+            <div>
+              <a href="https://aot-emails.s3.us.cloud-object-storage.appdomain.cloud/BUZZ20260812.html"
+                 target="_blank" rel="noopener noreferrer">
+                August 12, 2026 Edition
+              </a>
+              <span class="publication-type">Blog Newsletter</span>
+            </div>
+          </li>
+        </ul>
+
+        <a class="back-top" href="#top">Back to top &uarr;</a>
+      </section>
+
+      <!-- 2. Events Flyers -->
+      <section class="publication-section" id="events">
+        <h2 class="section-heading">
+          <span class="section-number">02</span>
+          Events Flyers
+        </h2>
+
+        <p class="section-description">
+          Digital event communications created to present information
+          and promote upcoming activities.
+        </p>
+
+        <ul class="publication-list">
+          <li>
+            <span class="document-icon" aria-hidden="true">&#9998;</span>
+            <div>
+              <a href="https://aot-emails.s3.us.cloud-object-storage.appdomain.cloud/EF20261028.html"
+                 target="_blank" rel="noopener noreferrer">
+                October 28, 2026 Flyer
+              </a>
+              <span class="publication-type">Event Flyer</span>
+            </div>
+          </li>
+
+          <li>
+            <span class="document-icon" aria-hidden="true">&#9998;</span>
+            <div>
+              <a href="https://aot-emails.s3.us.cloud-object-storage.appdomain.cloud/EF20260624.html"
+                 target="_blank" rel="noopener noreferrer">
+                June 24, 2026 Flyer
+              </a>
+              <span class="publication-type">Event Flyer</span>
+            </div>
+          </li>
+
+          <li>
+            <span class="document-icon" aria-hidden="true">&#9998;</span>
+            <div>
+              <a href="https://aot-emails.s3.us.cloud-object-storage.appdomain.cloud/EF20260916.html"
+                 target="_blank" rel="noopener noreferrer">
+                September 16, 2026 Flyer
+              </a>
+              <span class="publication-type">Event Flyer</span>
+            </div>
+          </li>
+        </ul>
+
+        <a class="back-top" href="#top">Back to top &uarr;</a>
+      </section>
+
+      <!-- 3. Published Assets Newsletters -->
+      <section class="publication-section" id="assets">
+        <h2 class="section-heading">
+          <span class="section-number">03</span>
+          Published Assets Newsletters
+        </h2>
+
+        <p class="section-description">
+          Selected publications featuring published assets and
+          associated digital communications.
+        </p>
+
+        <ul class="publication-list">
+          <li>
+            <span class="document-icon" aria-hidden="true">&#9998;</span>
+            <div>
+              <a href="https://aot-emails.s3.us.cloud-object-storage.appdomain.cloud/Publications20260402.html"
+                 target="_blank" rel="noopener noreferrer">
+                April 2, 2026 Edition
+              </a>
+              <span class="publication-type">Published Assets</span>
+            </div>
+          </li>
+
+          <li>
+            <span class="document-icon" aria-hidden="true">&#9998;</span>
+            <div>
+              <a href="https://aot-emails.s3.us.cloud-object-storage.appdomain.cloud/Publications20250701.html"
+                 target="_blank" rel="noopener noreferrer">
+                July 1, 2025 Edition
+              </a>
+              <span class="publication-type">Published Assets</span>
+            </div>
+          </li>
+        </ul>
+
+        <a class="back-top" href="#top">Back to top &uarr;</a>
+      </section>
+
+      <!-- 4. Showcase Replays -->
+      <section class="publication-section" id="replays">
+        <h2 class="section-heading">
+          <span class="section-number">04</span>
+          Showcase Replays
+        </h2>
+
+        <p class="section-description">
+          Digital communications promoting showcase replay content
+          and related resources.
+        </p>
+
+        <ul class="publication-list">
+          <li>
+            <span class="document-icon" aria-hidden="true">&#9998;</span>
+            <div>
+              <a href="https://aot-emails.s3.us.cloud-object-storage.appdomain.cloud/SR20260723.html"
+                 target="_blank" rel="noopener noreferrer">
+                July 23, 2026 Edition
+              </a>
+              <span class="publication-type">Showcase Replay</span>
+            </div>
+          </li>
+
+          <li>
+            <span class="document-icon" aria-hidden="true">&#9998;</span>
+            <div>
+              <a href="https://aot-emails.s3.us.cloud-object-storage.appdomain.cloud/SR20260923.html"
+                 target="_blank" rel="noopener noreferrer">
+                September 23, 2026 Edition
+              </a>
+              <span class="publication-type">Showcase Replay</span>
+            </div>
+          </li>
+
+          <li>
+            <span class="document-icon" aria-hidden="true">&#9998;</span>
+            <div>
+              <a href="https://aot-emails.s3.us.cloud-object-storage.appdomain.cloud/SR20261007.html"
+                 target="_blank" rel="noopener noreferrer">
+                October 7, 2026 Edition
+              </a>
+              <span class="publication-type">Showcase Replay</span>
+            </div>
+          </li>
+        </ul>
+
+        <a class="back-top" href="#top">Back to top &uarr;</a>
+      </section>
+
+      <!-- 5. Volunteer Calls Newsletters -->
+      <section class="publication-section" id="volunteer">
+        <h2 class="section-heading">
+          <span class="section-number">05</span>
+          Volunteer Calls Newsletters
+        </h2>
+
+        <p class="section-description">
+          Newsletter examples focused on volunteer communications
+          and engagement.
+        </p>
+
+        <ul class="publication-list">
+          <li>
+            <span class="document-icon" aria-hidden="true">&#9998;</span>
+            <div>
+              <a href="https://aot-emails.s3.us.cloud-object-storage.appdomain.cloud/TGA20260929.html"
+                 target="_blank" rel="noopener noreferrer">
+                September 29, 2026 Edition
+              </a>
+              <span class="publication-type">Volunteer Newsletter</span>
+            </div>
+          </li>
+
+          <li>
+            <span class="document-icon" aria-hidden="true">&#9998;</span>
+            <div>
+              <a href="https://aot-emails.s3.us.cloud-object-storage.appdomain.cloud/TGA20260827.html"
+                 target="_blank" rel="noopener noreferrer">
+                August 27, 2026 Edition
+              </a>
+              <span class="publication-type">Volunteer Newsletter</span>
+            </div>
+          </li>
+
+          <li>
+            <span class="document-icon" aria-hidden="true">&#9998;</span>
+            <div>
+              <a href="https://aot-emails.s3.us.cloud-object-storage.appdomain.cloud/TGA20260730.html"
+                 target="_blank" rel="noopener noreferrer">
+                July 30, 2026 Edition
+              </a>
+              <span class="publication-type">Volunteer Newsletter</span>
+            </div>
+          </li>
+        </ul>
+
+        <a class="back-top" href="#top">Back to top &uarr;</a>
+      </section>
+
+      <!-- 6. Site-Specific Newsletters -->
+      <section class="publication-section" id="site-specific">
+        <h2 class="section-heading">
+          <span class="section-number">06</span>
+          Site-Specific Newsletters
+        </h2>
+
+        <p class="section-description">
+          Targeted digital communications for specific sites
+          and audiences.
+        </p>
+
+        <ul class="publication-list">
+          <li>
+            <span class="document-icon" aria-hidden="true">&#9998;</span>
+            <div>
+              <a href="https://aot-emails.s3.us.cloud-object-storage.appdomain.cloud/ATX20261014.html"
+                 target="_blank" rel="noopener noreferrer">
+                October 14, 2026 Edition
+              </a>
+              <span class="publication-type">Site-Specific Newsletter</span>
+            </div>
+          </li>
+
+          <li>
+            <span class="document-icon" aria-hidden="true">&#9998;</span>
+            <div>
+              <a href="https://aot-emails.s3.us.cloud-object-storage.appdomain.cloud/ATX20261007.html"
+                 target="_blank" rel="noopener noreferrer">
+                October 7, 2026 Edition
+              </a>
+              <span class="publication-type">Site-Specific Newsletter</span>
+            </div>
+          </li>
+
+          <li>
+            <span class="document-icon" aria-hidden="true">&#9998;</span>
+            <div>
+              <a href="https://aot-emails.s3.us.cloud-object-storage.appdomain.cloud/ATX20260924.html"
+                 target="_blank" rel="noopener noreferrer">
+                September 24, 2026 Edition
+              </a>
+              <span class="publication-type">Site-Specific Newsletter</span>
+            </div>
+          </li>
+        </ul>
+
+        <a class="back-top" href="#top">Back to top &uarr;</a>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      &copy; <span id="year"></span> Christine Schouten
+      &nbsp;|&nbsp;
+      <a href="index.html">Return to Portfolio Home</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
